@@ -1,0 +1,62 @@
+Lot status mapping:
+        AWARDED: "awarded_contract"
+        CANCELLED: "no_awarded_contract", "procurement_discontinued", "procurement_unsuccessful"
+
+Supply type mapping:
+        SERVICES: "SERVICES", "S"
+        WORKS: "WORKS", "W"
+        SUPPLIES: "SUPPLIES", "U"
+
+Procedure type mapping:
+        OPEN: "pt_open", "OPE"
+        RESTRICTED: "pt_restricted", "pt_accelerated_restricted", "pt_accelerated_restricted_choice", "RES", "ARC"
+        COMPETITIVE_DIALOG: "pt_competitive_dialogue", "COD"
+        INOVATION_PARTNERSHIP: "pt_innovation_partnership"
+        NEGOTIATED_WITH_PUBLICATION: "pt_accelerated_negotiated", "pt_negotiated_with_competition", "PT_AWARD_CONTRACT_WITH_PRIOR_PUBLICATION", "PT_COMPETITIVE_NEGOTIATION", "pt_negotiated_with_prior_call", "f02_pt_accelerated_negotiated", "ACN", "NEC", "NEG", "NIC", "NIP"
+        NEGOTIATED_WITHOUT_PUBLICATION: "PT_NEGOTIATED_WITHOUT_PUBLICATION", "f03_award_without_prior_publication", "f03_pt_negotiated_without_competition", "f06_pt_negotiated_without_competition", "f06_award_without_prior_publication", "PT_AWARD_CONTRACT_WITHOUT_CALL", "PT_AWARD_CONTRACT_WITHOUT_PUBLICATION", "NOC", "NOP"
+        NEGOTIATED: "NEGOTIATED", "pt_negotiated_choice", "PT_INVOLVING_NEGOTIATION"
+        OUTRIGHT_AWARD: "AWP"        
+
+Body activities mapping:
+        DEFENCE: "DEFENCE", "Defence"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "ECONOMIC_AND_FINANCIAL_AFFAIRS", "Economical and Financial Affairs", "Economical anf Financial Affairs"
+        EDUCATION: "EDUCATION", "Education"
+        ENVIRONMENT: "ENVIRONMENT", "Environment"
+        GENERAL_PUBLIC_SERVICES: "GENERAL_PUBLIC_SERVICES", "General public services"
+        HEALTH: "HEALTH", "Health"
+        HOUSING_AND_COMMUNITY_AMENITIES: "HOUSING_AND_COMMUNITY_AMENITIES", "Housing and community amenities"
+        PUBLIC_ORDER_AND_SAFETY: "PUBLIC_ORDER_AND_SAFETY", "Public Order and Safety"
+        RECREATION_CULTURE_AND_RELIGION: "RECREATION_CULTURE_AND_RELIGION", "Recreation, culture and religion", "Recreation, culture and religion"
+        SOCIAL_PROTECTION: "SOCIAL_PROTECTION", "Social protection"
+        AIRPORT: "AIRPORT_RELATED_ACTIVITIES", "Airport-related activities", "Airport-related activities"
+        ELECTRICITY: "ELECTRICITY", "Electricity"
+        COAL_AND_OTHER_EXTRACTION: "EXPLORATION_EXTRACTION_COAL_OTHER_SOLID_FUEL", "Exploration and extraction of coal and other solid fuels", "Exploration and extraction of coal and other solid fuels"
+        GAS_AND_OIL_EXTRACTION: "EXPLORATION_EXTRACTION_GAS_OIL", "Exploration and extraction of gas and oil", "Exploration and extraction of gas and oil"
+        PORT: "PORT_RELATED_ACTIVITIES", "Port-related activities", "Port-related activities"
+        POSTAL: "POSTAL_SERVICES", "Postal Services"
+        GAS_AND_HEAT_PRODUCTION: "PRODUCTION_TRANSPORT_DISTRIBUTION_GAS_HEAT", "Production, transport and distribution of gas and heat", "Production, transport and distribution of gas and heat"
+        RAILWAY: "RAILWAY_SERVICES", "Railway services"
+        URBAN_TRANSPORT: "URBAN_RAILWAY_TRAMWAY_TROLLEYBUS_BUS_SERVICES", "Urban railway, tramway, trolleybus or bus services", "Urban railway, tramway, trolleybus or bus services"
+        WATER: "WATER", "Water"
+        OTHER: "OTHER", "Other"
+
+Body type mapping:
+        PUBLIC_BODY: "BODY_PUBLIC", "Body governed by public law", "6", "4"
+        NATIONAL_AGENCY: "NATIONAL_AGENCY", "National or federal Agency/Office", "N"
+        NATIONAL_AUTHORITY: "MINISTRY", "Ministry or any other national or federal authority", "1", "2"
+        REGIONAL_AGENCY: "REGIONAL_AGENCY", "Regional or local Agency/Office", "R"
+        REGIONAL_AUTHORITY: "REGIONAL_AUTHORITY", "Regional or local authority", "3"
+        EUROPEAN_AGENCY: "EU_INSTITUTION", "European Institution/Agency or International Organisation", "5"
+        UTILITIES: "Utilities", "Utilities entity"
+        OTHER: "Other", "8", "9", "5A"
+
+Form type mapping:
+        CONTRACT_NOTICE: "F02_2011", "F02_2014", "F05_2011", "F05_2014", "Contract notice", "Dynamic purchasing system", "2", "5"
+        CONTRACT_AWARD: "F03_2011", "F03_2014", "F06_2011", "F06_2014", "Contract award notice", "Contract award", "VOLUNTARY_EX_ANTE_TRANSPARENCY_NOTICE", "3", "6"
+        OTHER: "other_previous_publication", "NOTICE_BUYER_PROFILE"
+        PRIOR_INFORMATION_NOTICE: "PRIOR_INFORMATION_NOTICE"
+        CONTRACT_UPDATE: "F14_2011", "F14_2014", "Additional information"
+
+Selection method plugin:
+        MEAT: "The most economic tender", "M"
+        LOWEST_PRICE: "Lowest price", "L"

@@ -1,0 +1,48 @@
+Procedure type mapping:
+        OPEN: "Avatud hankemenetlus", "Lihthange"
+        NEGOTIATED_WITHOUT_PUBLICATION: "Väljakuulutamiseta läbirääkimistega hankemenetlus"
+        NEGOTIATED_WITH_PUBLICATION: "Väljakuulutamisega läbirääkimistega hankemenetlus"
+        DESIGN_CONTEST: "Avatud ideekonkurss", "Piiratud osalejate arvuga ideekonkurss"
+        COMPETITIVE_DIALOG: "Võistlev dialoog"
+        MINITENDER: "Minikonkurss raamlepingu alusel"
+        RESTRICTED: "Piiratud hankemenetlus"
+        CONCESSION: "Ehitustööde kontsessioon", "Kontsessioon"
+        OTHER: "Lihtsustatud korras teenuste tellimine", "Erand § 14", "Vabatahtlik teade"
+        OUTRIGHT_AWARD: "Vabatahtlik teade - leping ilma hanketeate eelneva avaldamis"
+
+Selection method and lot mapping:
+        LOWEST_PRICE: "Madalaim hind"
+        MEAT: "Majanduslikult soodsaim pakkumus", "Parima hinna ja kvaliteedi suhe"
+
+Form type mapping:
+        PRIOR_INFORMATION_NOTICE: "Eelteade", "Eelteade - kaitse- ja julgeolekuvaldkond"
+        CONTRACT_NOTICE: "Hanketeade", "Hanketeade (Võrgustik)", "Hanketeade - kaitse- ja julgeolekuvaldkond"
+        CONTRACT_AWARD: "Riigihanke aruanne", "Ehitustööde kontsessiooni teade", "Ideekonkursi tulemused"
+        CONTRACT_IMPLEMENTATION: "Riigihanke aruande lisa"
+
+Buyer type mapping:
+        REGIONAL_AUTHORITY: "Kohaliku omavalitsuse üksus"
+        REGIONAL_AGENCY: "Kohaliku omavalitsuse asutus"
+        NATIONAL_AGENCY: "Riigiasutus või valitsusasutus", "Valitsusasutuse hallatav riigiasutus"
+        PUBLIC_BODY: "Avalik-õiguslik juriidiline isik või riigi kontrolli all olev eraõiguslik juriidiline isik"
+
+Buyer activity mapping:
+        PORT: "Sadamaga seotud teenused"
+        RECREATION_CULTURE_AND_RELIGION: "Vaba aeg, kultuur ja religioon"
+        COAL_AND_OTHER_EXTRACTION: "Söe ja muude tahkekütuste leiukohtade uurimine ja kaevandamine"
+        ENVIRONMENT: "Keskkond", "maaparandus"
+        PUBLIC_ORDER_AND_SAFETY: "Avalik kord ja julgeolek"
+        EDUCATION: "Haridus"
+        GENERAL_PUBLIC_SERVICES: "Üldised avalikud teenused"
+        HEALTH: "tervisekaitse", "Tervishoid"
+        AIRPORT: "Lennujaamaga seotud teenused"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "ettevõtete toetamine ja kinnisvara rent", "riiklikud tagatised, toetused", "Majandus ja rahandus"
+        HOUSING_AND_COMMUNITY_AMENITIES: "Kinnisvara", "arendusprojektide juhtimine", "Linnaplaneerimine", "ehituse- ja ehitusmaterjalide alased konsultatsioonid ja teenused", "Elamu- ja kommunaalmajandus", "Kinnisvara arendus ja haldus"
+        ELECTRICITY: "Elektrienergia"
+        RAILWAY: "Raudteeteenused"
+        WATER: "Vesi"
+        URBAN_TRANSPORT: "ühistransport", "Linnarongi-, trammi-, trollibussi- või bussiteenused"
+        DEFENCE: "Riigikaitse"
+        GAS_AND_HEAT_PRODUCTION: "Gaasi ja soojusenergia tootmine, transport ja jaotamine"
+        SOCIAL_PROTECTION: "Sotsiaalkaitse"
+        OTHER: "Metsamajandus", "IT ja arendus", "Ehitiste haldamine", "Teede hoid ja liiklusohutus"

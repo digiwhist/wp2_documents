@@ -1,0 +1,20 @@
+Country mapping mapping:
+        GE: "Georgia"
+
+Form type mapping:
+        CONTRACT_NOTICE: "Tender announced", "Bidding commenced", "Additional rounds of trade ended", "Selection/Evaluation", "Winner identified", "Finalization of contract"
+        CONTRACT_AWARD: "Contract awarded"
+        CONTRACT_CANCELLATION: "No bids received", "Cancelled", "Contract not awarded"
+
+Procedure type mapping:
+        OPEN: "Consolidated Tender(CON)", "Contest (CNT)", "Donor electronic procurement procedure(DEP)", "Electronic Tender (DAP)", "Electronic Tender (SPA)", "Electronic Tender (SPA) via price list", "Electronic Tender Without Reverse Auction(NAT)", "Electronic Tender Without Reverse Auction(NAT) via price list", "e-Procurement Procedure(GEO) via price list", "e-Procurement Procedure(GEO)", "Simplified Electronic Tender(DAP)", "Simplified Electronic Tender(SPA)", "Simplified Electronic Tender(SPA) via price list", "Simplified Electronic Tender Without Reverse Auction(NAT)", "Simplified Electronic Tender Without Reverse Auction(NAT) via price list", "Simplified Two Stage Electronic Tender(MEP)", "Two Stage Electronic Tender(MEP)", "Two Stage Electronic Tender(MEP) via price list"
+
+Lot status mapping:
+        AWARDED: "Contract awarded", "Winner identified"
+        CANCELLED: "No bids received", "Contract not awarded", "Cancelled"
+        ANNOUNCED: "Finalization of contract", "Tender announced", "Bidding completed", "Selection/Evaluation", "Bidding commenced"
+
+Buyer type mapping:
+        PUBLIC_BODY: "Legal Entity of Public Law", "Non-entrepreneurial Non-commercial Legal Entity"
+        NATIONAL_AUTHORITY: "State Authority"
+        REGIONAL_AUTHORITY: "Local Self-Government Authority"

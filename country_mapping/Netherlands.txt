@@ -1,0 +1,38 @@
+Supply type mapping:
+        WORKS: "(a) Werken"
+        SUPPLIES: "(b) Leveringen"
+        SERVICES: "(c) Diensten"
+
+Body type mapping:
+        PUBLIC_BODY: "Publiekrechtelijke instelling"
+        NATIONAL_AGENCY: "Nationaal of federaal agentschap/bureau"
+        NATIONAL_AUTHORITY: 
+                "Ministerie of andere nationale of federale instantie, met regionale of plaatselijke onderverdelingen ervan", "Ministerie of andere nationale of federale instantie, met inbegrip van regionale of plaatselijke onderverdelingen"
+        REGIONAL_AGENCY: "Regionaal of plaatselijk agentschap/bureau"
+        REGIONAL_AUTHORITY: "Regionale of plaatselijke instantie", "Andere: Gemeente", "Andere: gemeente"
+        EUROPEAN_AGENCY: 
+                "Europese instelling/Europees agentschap of internationale organisatie"
+
+Body activities mapping:
+        GENERAL_PUBLIC_SERVICES: "Algemene overheidsdiensten"
+        EDUCATION: "Onderwijs", "Onderwijs Andere: Onderzoek", "Onderwijs Andere: onderzoek"
+        PUBLIC_ORDER_AND_SAFETY: "Openbare orde en veiligheid"
+        HEALTH: "Gezondheid"
+        HOUSING_AND_COMMUNITY_AMENITIES: "Huisvesting en gemeenschappelijke voorzieningen"
+        DEFENCE: "Defensie"
+        ENVIRONMENT: "Milieu"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "Economische en financiële zaken", "Recreatie, cultuur en godsdienst"
+        SOCIAL_PROTECTION: "Sociale bescherming"
+        WATER: "Andere: Waterschap", "Algemene overheidsdiensten Andere: Waterschap", "Andere: Waterschap / drinkwater"
+
+Form type mapping:
+        CONTRACT_NOTICE: 
+                "Aankondiging van een opdracht", "Aankondiging van een opdracht - Nutssectoren", "Vereenvoudigde aankondiging van een overheidsopdracht in het kader van een dynamisch aankoopsysteem", "Aankondiging van een prijsvraag voor ontwerpen", "Aankondiging van een opdracht - Overheidsopdrachten - Sociale en andere specifieke diensten", "Aankondiging van een opdracht voor opdrachten op het gebied van defensie en veiligheid", "Aankondiging van een opdracht - opdrachten gegund door een concessiehouder die zelf geen aanbestedende dienst is"
+        CONTRACT_AWARD: 
+                "Aankondiging van een gegunde opdracht", "Aankondiging van een gegunde opdracht - Nutssectoren", "Aankondiging van een gegunde opdracht - Overheidsopdrachten - Sociale en andere specifieke diensten", "Resultaten van prijsvraag voor ontwerpen"
+        PRIOR_INFORMATION_NOTICE: 
+                "Vooraankondiging", "Periodieke indicatieve aankondiging - Nutssectoren", "Vooraankondiging - Overheidsopdrachten - Sociale en andere specifieke diensten", "Vooraankondiging voor opdrachten op het gebied van defensie en veiligheid"
+        CONTRACT_UPDATE: 
+                "Kennisgeving van aanvullende informatie, informatie over een onvolledige procedure of rectificatie"
+        OTHER: 
+                "Aankondiging in het geval van vrijwillige transparantie vooraf", "Erkenningsregeling - Nutssectoren", "Marktconsultatie", "Aankondiging door middel van een kopersprofiel", "Aankondiging van een concessieovereenkomst", "Concessieovereenkomst voor openbare werken", "Aankondiging van de gunning van een concessieovereenkomst"

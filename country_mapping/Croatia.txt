@@ -1,0 +1,8 @@
+Supply type mapping:
+        SUPPLIES: "Roba"
+        SERVICES: "Usluge"
+        WORKS: "Radovi"
+
+Form type mapping:
+        CONTRACT_NOTICE: "Poziv na nadmetanje", "POZIV NA NADMETANJE", "Poziv na nadmetanje – sektor", "POZIV NA NADMETANJE - SEKTOR"
+        CONTRACT_AWARD: "Obavijest o sklopljenim ugovorima", "OBAVIJEST O SKLOPLJENIM UGOVORIMA", "Obavijest o sklopljenim ugovorima - sektor", "OBAVIJEST O SKLOPLJENIM UGOVORIMA - SEKTORSKI"

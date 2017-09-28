@@ -1,0 +1,75 @@
+Body type mapping:
+    PUBLIC_BODY: "BODY_PUBLIC", "státní podnik", "příspěvková organizace", "zdravotní pojišťovna", "jiná organizace, s.p.", "Příspěvková organizace", "Zdravotní pojišťovna", "veřejná výzkumná instituce", "Česká národní banka"
+    NATIONAL_AGENCY: "NATIONAL_AGENCY"
+    NATIONAL_AUTHORITY: "MINISTRY"
+    REGIONAL_AGENCY: "REGIONAL_AGENCY"
+    REGIONAL_AUTHORITY: "REGIONAL_AUTHORITY"
+    EUROPEAN_AGENCY: "EU_INSTITUTION"
+
+Selection method mapping:
+    LOWEST_PRICE: "Nejnižší nabídková cena", "AC_PRICE"
+    MEAT: "hospodářsky nejvýhodnější nabídka z hlediska", "hospodářsky nejvýhodnější nabídka", "AC_PROCUREMENT_DOC", "AC_QUALITY_AC_COST"
+
+Body activity mapping:
+        DEFENCE: "Obrana", "DEFENCE"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "Hospodářské a finanční záležitosti", "ECONOMIC_AND_FINANCIAL_AFFAIRS"
+        EDUCATION: "Školství", "EDUCATION"
+        ENVIRONMENT: "Životní prostředí", "lesnictví", "Hospodaření s majetkem státu v působnosti MO v oblasti lesního hospodářství", "Hospodaření s majetkem státu v působnosti MO v oblasti lesní, zemědělské a dřevozpracující.", "ENVIRONMENT"
+        GENERAL_PUBLIC_SERVICES: "Služby pro širokou veřejnost", "stavba silnic a dálnic", "územně samosprávný celek a z toho plynoucí hlavní činnost", "GENERAL_PUBLIC_SERVICES"
+        HEALTH: "Zdravotnictví", "HEALTH"
+        HOUSING_AND_COMMUNITY_AMENITIES: "Bydlení a občanská vybavenost", "HOUSING_AND_COMMUNITY_AMENITIES"
+        PUBLIC_ORDER_AND_SAFETY: "Veřejný pořádek a bezpečnost", "PUBLIC_ORDER_AND_SAFETY"
+        RECREATION_CULTURE_AND_RELIGION: "Rekreace, kultura a náboženství", "RECREATION_CULTURE_AND_RELIGION"
+        AIRPORT: "Řízení letového provozu", "Činnosti související s letišti", "AIRPORT"
+        ELECTRICITY: "Elektřina", "ELECTRICITY"
+        COAL_AND_OTHER_EXTRACTION: "Vyhledávání a těžba uhlí a dalších pevných paliv", "COAL_AND_OTHER_EXTRACTION"
+        GAS_AND_HEAT_PRODUCTION: "Výroba, přeprava a distribuce plynu a tepla", "GAS_AND_HEAT_PRODUCTION"
+        RAILWAY: "Železniční služby", "RAILWAY"
+        URBAN_TRANSPORT: "Městská železniční, tramvajová, trolejbusová nebo autobusová doprava", "Příměstská železniční, tramvajová, trolejbusová nebo autobusová doprava", "URBAN_TRANSPORT"
+        WATER: "Vodohospodářství", "správa povodí", "výkon správy povodí", "Výkon správy povodí", "WATER"
+        POSTAL: "Poštovní služby", "POSTAL"
+        GAS_AND_OIL_EXTRACTION: "Vyhledávání a těžba zemního plynu a ropy", "GAS_AND_OIL_EXTRACTION"
+        PORT: "Činnosti související s přístavy", "PORT"
+        SOCIAL_PROTECTION: "Sociální služby", "SOCIAL_PROTECTION"
+
+Supply type mapping:
+
+        SERVICES: "Služby", "SERVICES"
+        WORKS: "Stavební práce", "WORKS"
+        SUPPLIES: "Dodávky", "SUPPLIES"
+
+Form type mapping:
+        PRIOR_INFORMATION_NOTICE: "1", "4", "15", "16", "Oznámení předběžných informací", "Oznámení o dobrovolné průhlednosti ex ante", "F01", "CZ01"
+        CONTRACT_NOTICE: "2", "5", "9", "12", "17", "Oznámení o zakázce", "Zjednodušené oznámení o zakázce v rámci dynamického nákupního systému", "F02", "F04", "F05", "F12", "CZ02"
+        CONTRACT_AWARD: "3", "6", "13", "18", "F03", "F06", "F13", "F15", "CZ03"
+        CONTRACT_IMPLEMENTATION: "54"
+        CONTRACT_CANCELLATION: "51"
+        CONTRACT_UPDATE: "F14", "CZ04"
+        CONTRACT_AMENDMENT: "F20"
+        OTHER: "Oznámení na profilu kupujícího", "F08", "F21", "F24", "CZ05", "CZ06"
+
+Procedure type mapping:
+        OPEN: "Otevřené", "PT_OPEN"
+        RESTRICTED: "Urychlené omezené", "Urychlené užší", "Omezené", "Užší", "PT_RESTRICTED"
+        NEGOTIATED: "Urychlené vyjednávací", "Urychlené jednací", "Vyjednávací", "Vyjednávací s výzvou k účasti v soutěži"
+        NEGOTIATED_WITHOUT_PUBLICATION: "Vyjednávací bez zveřejnění oznámení o zakázce", "Vyjednávací bez zveřejnění oznámení o zakázce / výzvy k účasti v soutěži", "Vyjednací bez zveřejnění oznámení o zakázce / výzvy k účasti v soutěži", "PT_AWARD_CONTRACT_WITHOUT_CALL", "PT_NEGOTIATED_WITHOUT_PUBLICATION", "PT_NEGOTIATED_WITHOUT_PUBLICATION_24EU"
+        NEGOTIATED_WITH_PUBLICATION: "Jednací s uveřejněním", "Vyjednávací se zveřejněním oznámení o zakázce", "PT_NEGOTIATED_WITH_PRIOR_CALL", "PT_COMPETITIVE_NEGOTIATION"
+        APPROACHING_BIDDERS: "Zjednodušené podlimitní řízení", "PT_SIMPLIFIED_CONTRACT"
+        COMPETITIVE_DIALOG: "Soutěžní dialog", "PT_COMPETITIVE_DIALOGUE"
+        OUTRIGHT_AWARD: "Zadání zakázky bez předchozího zveřejnění oznámení o zakázce v Úředním věstníku Evropské unie (v případech uvedených v oddíle 2 přílohy D1)", "Zadání zakázky bez předchozího zveřejnění oznámení o zakázce v Úředním věstníku Evropské unie (v případech uvedených v oddíle 2 přílohy D2)", "Zadání zakázky bez předchozího zveřejnění oznámení o zakázce v Úředním věstníku Evropské unie (v případech uvedených v oddíle 2 přílohy D1, D2 nebo D3)"
+
+Npwp reason mapping:
+        NO_VALID_OFFERS_IN_PRECEEDING_PROCUREMENT: "AttItems.ZadneVhodneNabidky_1", "AttItems.ZadnazNabidekNebylaPrijatelna_1", "AnnexD[0].NoTendersRequests"
+        RESEARCH_PROCUREMENT: "AttItems.ZahrnuteVyrobkyZaUcelemVyzkumu_1", "AnnexD[0].ManufacturedForResearch"
+        TECHNICAL_EXCLUSIVITY: "AttItems.PouzeKonkretnimDodavatelemTechnicke_1", "D_TECHNICAL"
+        ART_EXCLUSIVITY: "AttItems.PouzeKonkretnimDodavatelemUmelecke_1", "D_ARTISTIC"
+        AUTHORSHIP_RIGHTS_EXCLUSIVITY: "AttItems.PouzeKonkretnimDodavatelem_1", "D_PROTECT_RIGHTS"
+        EMERGENCY: "AttItems.KrajniNalehavost_1", "AnnexD[0].ExtremeUrgency"
+        ADDITIONAL_WORK: "AttItems.DalsiStavebniPraceVsouladu_1", "AttItems.NoveStavebniPrace_1", "AnnexD[0].DeliveriesOrdered", "AnnexD[0].RepetitionExisting"
+        PROPOSAL_CONTEST_FOLLOW_UP: "AttItems.ZakazkaZadanaSouteziNaUrcityVykon_1", "AnnexD[0].AwardedDesignContest"
+        COMMODITY_MARKET: "AttItems.ZboziKotovaneNaTrhuKomodit_1", "AnnexD[0].CommodityMarket"
+        ADVANTAGEOUS_CONDITIONS: "AttItems.NakupZboziZaObzvlasteVyhodnychPodminek_1", "AttItems.NakupZboziOdKonkurznichSpravcu_1", "AnnexD[0].FromWindingProvider", "AnnexD[0].BarginPurchase"
+        FRAMEWORK_AGREEMENT: "AttItems.ZakazkyPridelenyNaZakladeRS_1"
+        OUTSIDE_DIRECTIVE: "AttItems.JineOduvodneniZadaniZakazky_1", "AnnexD[0].OutsideScope"
+
+        

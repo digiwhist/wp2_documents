@@ -1,0 +1,19 @@
+Form type mapping:
+        CONTRACT_NOTICE: "Invitations to tender (summary)", "Invitation to tender"
+        CONTRACT_AWARD: "Contracts awarded", "Competitions awarded"
+        CONTRACT_CANCELLATION: "Cancellation of invitation to tender", "Revocation"
+        CONTRACT_UPDATE: "Competitions      Correction", "Cancellation of invitation to tender       Correction", "Rectification      Correction", "Prior information notice      Correction", "Selection of participants       Correction", "Revocation      Correction", "Invitation to tender       Correction", "Invitations to tender (summary)      Correction", "Contracts awarded      Correction", "Competitions awarded      Correction"
+        PRIOR_INFORMATION_NOTICE: "Prior information notice"
+        OTHER: "Selection of participants", "Competitions"
+
+Buyer type mapping:
+        NATIONAL_AGENCY: "Bund (Dezentrale Bundesverwaltung - öffentlich rechtliche Organisationen)", "Confédération (Administration fédérale décentralisée - organisations de droit public de la Confédération)", "Confederazione (Amministrazione federale decentralizzata - aziende federali di diritto pubblico)", "Confederation (Decentralized federal administration -public-legal organizations of the federation)"
+        NATIONAL_AUTHORITY: "Bund (Zentrale Bundesverwaltung)", "Confédération (Administration fédérale centrale)", "Confederazione (Amministrazione federale centrale)", "Confederation (Central federal administration)"
+        REGIONAL_AGENCY: "Andere Träger kommunaler Aufgaben", "Andere Träger kantonaler Aufgaben", "Autres collectivités assumant des tâches cantonales", "Autres collectivités assumant des tâches communales", "Cantone", "Other supporting organisations assuming cantonal tasks", "Altri enti preposti a compiti comunali"
+        REGIONAL_AUTHORITY: "Kanton", "Gemeinde/Stadt", "Commune/Ville", "Canton", "Comune/Città"
+        OTHER: "Andere", "Autres", "Other"
+
+Supply type mapping:
+        SERVICES: "Marché de services", "Order for services", "Commessa di servizi", "Dienstleistungsauftrag"
+        WORKS: "Marché de travaux de construction", "Bauauftrag", "Commessa edile"
+        SUPPLIES: "Marché de fournitures", "Supply order", "Lieferauftrag"

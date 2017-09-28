@@ -1,0 +1,17 @@
+Form type mapping:
+        PRIOR_INFORMATION_NOTICE: "1", "10", "12", "notice_iip", "sps_periodic", "notice_iip_81"
+        CONTRACT_NOTICE: "4", "5", "8", "notice_contract", "notice_design", "notice_planned_contract", "notice_contract_sps", "sps_design", "notice_contract_81", "notice_concession", "notice_call_for_offer"
+        CONTRACT_AWARD: "6", "9", "13", "notice_concluded_contract", "notice_contract_rights", "notice_exante", "notice_design_results", "notice_simple_contract", "notice_contract_rights_sps", "sps_design_results", "sps_simple_contract", "sps_notice_exante", "notice_contract_rights_81", "notice_exante_81", "notice_concession_results", "notice_concession_building", "notice_concession_contract", "notice_concession_exante", "notice_call_for_offer_results"
+        OTHER: "2", "7", "11", "notice_client_profile", "sps_client_profile", "sps_qualification", "notice_client_profile_81", "notice_contract_sub_81", "notice_299_contract", "notice_299_changes"
+        CONTRACT_AMENDMENT: "notice_changes", "sps_notice_changes", "notice_changes_81", "notice_call_for_offer_changes"
+
+Selection method mapping:
+        LOWEST_PRICE: "3"
+        MEAT: "1", "2"
+        
+Tender size mapping:
+        ABOVE_THE_THRESHOLD: "3", TenderSize.ABOVE_THE_THRESHOLD.name()
+        BELOW_THE_THRESHOLD: "2"
+
+Country type mapping:
+        LV: "1"

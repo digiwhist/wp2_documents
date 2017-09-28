@@ -1,0 +1,19 @@
+Supply type mapping:
+        SERVICES: "Services"
+        SUPPLIES: "Supplies"
+        WORKS: "Works"
+
+Contry mapping:
+        AU: "Australia"
+        IS: "Iceland"
+        IE: "Ireland"
+        IL: "Israel"
+        SE: "Sweden"
+        GB: "United Kingdom"
+        US: "United States of America"
+
+Form type mapping:
+        CONTRACT_NOTICE: "Concession notice (TED (v209))", "Contract Notice (eTenders)", "Contract Notice (TED (2.0.7 old not supported version))", "Contract Notice (TED (v208))", "Contract notice (TED (v209))", "Contract notice - concession (TED (2.0.7 old not supported version))", "Contract notice - concession (TED (v208))", "Contract Notice - Utilities (TED (2.0.7 old not supported version))", "Contract Notice - Utilities (TED (v208))", "Contract notice - utilities (TED (v209))", "Contract notice for contracts in the field of defence and security (TED (v208))", "Notice for Additional information (TED (2.0.7 old not supported version))", "Notice for Additional information (TED (v208))", "Notice on a buyer profile (TED (2.0.7 old not supported version))", "Design contest notice (TED (2.0.7 old not supported version))", "Design contest notice (TED (v208))", "Design contest notice (TED (v209))", "Dynamic purchasing system (TED (2.0.7 old not supported version))", "Periodic indicative Notice - Utilities (TED (2.0.7 old not supported version))", "Periodic indicative Notice - Utilities (TED (v208))", "Periodic indicative Notice - Utilities (TED (v209))", "Voluntary Ex Ante Transparency Notice (TED (2.0.7 old not supported version))"
+        CONTRACT_AWARD: "Concession award notice (TED (v209))", "Contract Award Notice (eTenders)", "Contract Award Notice (TED (2.0.7 old not supported version))", "Contract Award Notice (TED (v208))", "Contract award notice (TED (v209))", "Contract Award Notice - Utilities (TED (2.0.7 old not supported version))", "Contract Award Notice - Utilities (TED (v208))", "Contract award notice - utilities (TED (v209))"
+        PRIOR_INFORMATION_NOTICE: "Prior Information Notice (eTenders)", "Prior Information Notice (TED (2.0.7 old not supported version))", "Prior Information Notice (TED (v208))", "Prior information notice (TED (v209))", "Prior information notice - Call for competition (TED (v209))"
+        OTHER: "Corrigendum (TED (v209))", "Public Works Concession (TED (2.0.7 old not supported version))", "Qualification system - utilities (TED (2.0.7 old not supported version))", "Qualification system - utilities - Call for competition (TED (v209))", "Results of design contest (TED (2.0.7 old not supported version))", "Social and other specific services – public contracts (TED (v209))", "Social and other specific services – public contracts - Call for competition (TED (v209))", "Social and other specific services – utilities (TED (v209))"

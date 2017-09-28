@@ -1,0 +1,14 @@
+Body type mapping:
+        NATIONAL_AGENCY: "NATIONAL_AGENCY"
+        PUBLIC_BODY: "BODY_PUBLIC"
+        REGIONAL_AUTHORITY: "REGIONAL_AUTHORITY"
+        REGIONAL_AGENCY: "REGIONAL_AGENCY"
+        NATIONAL_AUTHORITY: "MINISTRY"
+
+Country mapping:
+        NO: "NO"
+
+Supply type mapping:
+        SUPPLIES: "SUPPLIES"
+        SERVICES: "SERVICES"
+        WORKS: "WORKS"

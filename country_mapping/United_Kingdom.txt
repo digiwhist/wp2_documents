@@ -1,0 +1,31 @@
+Form type mapping:
+        CONTRACT_NOTICE: "NOTICE"
+        CONTRACT_AWARD: "AWARD"
+        PRIOR_INFORMATION_NOTICE: "PRIOR_INFORMATION"
+
+Body type mapping:
+        PUBLIC_BODY: "PUBLIC_BODY"
+        OTHER: "OTHER"
+
+Country mapping:
+        GB: "United Kingdom", "England", "UK", "Wales", "Scotland", "Northern Ireland"
+        AD: "Andorra"
+
+Procedure type mapping:
+        OPEN: "Open", "Accelerated", "pt_open"
+        RESTRICTED: "Restricted"
+        NEGOTIATED: "Negotiated", "AcceleratedNegotiated"
+        NEGOTIATED_WITHOUT_PUBLICATION: "NegotiatedWithoutCompetition"
+        OUTRIGHT_AWARD: "AwardWithoutPriorPublication", "DirectAward"
+        COMPETITIVE_DIALOG: "CompetitiveDialog"
+        OTHER: "NotApplicable", "NotSpecified"
+
+Supply type mapping:
+        SERVICES: "Services"
+        WORKS: "Works"
+        SUPPLIES: "Supplies", "Products"
+
+Status mapping:
+        FINISHED: "Closed"
+        AWARDED: "Awarded"
+        ANNOUNCED: "Open"

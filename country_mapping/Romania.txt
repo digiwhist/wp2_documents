@@ -1,0 +1,20 @@
+Country mapping:
+    IE: "Ireland"
+    TR: "Turkey"
+    US: "United States"
+    DE: "Germany"
+    PL: "Poland"
+    HU: "Hungary"
+    FR: "France"
+    NL: "Netherlands"
+    GB: "United Kingdom"
+    RO: "Romania"
+    CZ: "Czech Republic"
+    IT: "Italy"
+    ES: "Spain"
+    CA: "Canada"
+    BG: "Bulgaria"
+
+Procedure type mapping:
+    PUBLIC_CONTEST: "Anunt de atribuire la anunt de participare"
+    OUTRIGHT_AWARD: "Cumparare directa"

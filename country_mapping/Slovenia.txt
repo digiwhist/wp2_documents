@@ -1,0 +1,14 @@
+Buyer type mapping:
+        PUBLIC_BODY: "Oseba javnega prava"
+        REGIONAL_AUTHORITY: "Regionalni ali lokalni organ", "Regionalni ali lokalni organ."
+        REGIONAL_AGENCY: "Regionalna ali lokalna agencija.", "Regionalna ali lokalna agencija/urad"
+        NATIONAL_AUTHORITY: "Ministrstvo ali kateri koli drug nacionalni ali zvezni organ,  vključno z regionalnimi ali lokalnimi pododdelki", "Ministrstvo ali kateri koli drugi državni organ,  vključno z njihovimi regionalnimi ali lokalnimi oddelki."
+        NATIONAL_AGENCY: "Nacionalna ali zvezna agencija/urad"
+
+Form type mapping:
+        CONTRACT_NOTICE: "EU 2 - SL", "EU 5 - SL", "EU 7 - SL", "EU 12 - SL", "EU 17 - SL", "EU 21 - SL", "PZP", "PZPPO1 - ZJN-2", "PZPPO1 - ZJNPOV", "PZPPO1 - ZJNVETPS", "NMV1"
+        CONTRACT_AWARD: "EU 3 - SL", "EU 6 - SL", "EU 13 - SL", "EU 18 - SL", "EU 25 - SL", "PZPPO2 - ZJN-2", "PZPPO2 - ZJNPOV", "PZPPO2 - ZJNVETPS", "NMV2"
+        CONTRACT_CANCELLATION: "preklic/popravek", "preklic/popravek NMV", "preklic/popravek PZP"
+        CONTRACT_UPDATE: "EU 14 - SL", "EU 20 - SL", "popravek OS"
+        PRIOR_INFORMATION_NOTICE: "EU 1 - SL", "EU 4 - SL", "EU 15 - SL", "EU 16 - SL"
+        CONTRACT_IMPLEMENTATION: "OS - ZJN-2", "OS - ZJNPOV", "OS - ZJNVETPS"

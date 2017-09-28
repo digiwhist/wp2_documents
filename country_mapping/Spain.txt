@@ -1,0 +1,39 @@
+Supply type mapping:
+        SUPPLIES: "1", "4"
+        SERVICES: "2"
+        WORKS: "3"
+        OTHER: "50", "8", "7", "40", "31", "21", "0"
+
+Deposit mapping:
+        Provisional: "1"
+        Final: "2"
+        Especial: "3"
+
+Country mapping:
+        AF: "Afganistán"
+        BE: "Bélgica"
+        ES: "España", "ESPAÑA (PENI. BAL. Y CANARIAS)"
+        FR: "Francia"
+        GB: "Reino Unido"
+        DE: "Alemania"
+        PT: "Portugal"
+        US: "Estados Unidos"
+
+Procedure type mapping:
+        OPEN: "1"
+        RESTRICTED: "2"
+        NEGOTIATED_WITHOUT_PUBLICATION: "3"
+        NEGOTIATED_WITH_PUBLICATION: "4"
+        COMPETITIVE_DIALOG: "5"
+        MINITENDER: "6"
+        OTHER: "100", "7"
+
+ Form type mapping:
+        CONTRACT_NOTICE: "ContractNotice", "CallForTenders"
+        CONTRACT_AWARD: "ContractAwardNotice"
+        CONTRACT_UPDATE: "ContractModificationNotice"
+        OTHER: "HtmlDetail"
+
+Status mapping:
+        AWARDED: "1", "2", "8", "9"
+        CANCELLED: "3", "4", "5", "6", "7"

@@ -1,0 +1,43 @@
+Form type mapping:
+        CONTRACT_NOTICE: "APIE PIRKIMA"
+        CONTRACT_UPDATE: "PATAISOS"
+        CONTRACT_AWARD: "APIE SUTARTIES SUDARYMĄ"
+        PRIOR_INFORMATION_NOTICE: "ŠANKSTINIS INFORMACINIS SKELBIMAS"
+
+Selection Method mapping:
+        MEAT: "Ekonomiškai naudingiausias pasiūlymas"
+        LOWEST_PRICE: "Mažiausia kaina"
+
+Body type mapping:
+        PUBLIC_BODY: "Ministerija ar kuri nors kita nacionalinės ar federacinės valdžios institucija, įskaitant jų regioninius ar vietos padalinius"
+        NATIONAL_AGENCY: "Nacionalinė ar federacinė tarnyba ar biuras"
+        REGIONAL_AGENCY: "Regiono ar vietos tarnyba ar biuras"
+        REGIONAL_AUTHORITY: "Regiono ar vietos valdžios institucija"
+        PUBLIC_BODY: "Akcinė bendrovė", "Akcinė bendrovė, kuri yra perkančioji organizacija pagal LR Viešųjų pirkimų įstatymą"
+        OTHER: "Kita"
+
+Body activities mapping:
+        GENERAL_PUBLIC_SERVICES: "Bendros viešosios paslaugos"
+        ENVIRONMENT: "Aplinka"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "Ekonomikos ir finansiniai reikalai"
+        DEFENCE: "Gynyba"
+        RECREATION_CULTURE_AND_RELIGION: "Laisvalaikis, kultūra ir religija"
+        SOCIAL_PROTECTION: "Socialinė apsauga"
+        HEALTH: "Sveikata"
+        EDUCATION: "Švietimas"
+        PUBLIC_ORDER_AND_SAFETY: "Viešoji tvarka ir visuomenės apsauga"
+        HOUSING_AND_COMMUNITY_AMENITIES: "Būsto ir komunaliniai patogumai"
+        OTHER: "Kita"
+
+Precedure type mapping:
+        OPEN: "Atvira", "4. Pagreitinta ribota", "1. Atvira"
+        RESTRICTED: "2. Ribota"
+        COMPETITIVE_DIALOG: "16. Konkurencinis dialogas"
+        NEGOTIATED: "5. Pagreitintų derybų", "3. Derybų"
+        NEGOTIATED_WITH_PUBLICATION: "14. Derybų procedūra kai skelbimas dalyvauti konkurse nėra skelbiamas", "12. Derybų procedūra paskelbiant skelbimą dalyvauti konkurse"
+
+Country mapping:
+        BY: "Baltarusija"
+        BE: "Belgija"
+        LT: "Lietuva"
+        RU: "Rusijos Federacija"

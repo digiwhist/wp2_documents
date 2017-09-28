@@ -1,0 +1,20 @@
+Supply type mapping:
+    WORKS: "Empreitadas de obras públicas"
+    SERVICES: "Aquisição de serviços"
+    OTHER: "Concessão de obras públicas", "Concessão de serviços públicos", "Locação de bens móveis", "Sociedade", "Outros", "Aquisição de bens móveis"
+
+Form type mapping:
+    CONTRACT_NOTICE: "Anúncio de procedimento", "Anúncio de concurso urgente"
+    CONTRACT_UPDATE: "Declaração de retificação de anúncio", "Aviso de prorrogação de prazo", "Incrementos superiores a 15%"
+
+Procedure type mapping:
+    OPEN: "Concurso público"
+    OUTRIGHT_AWARD: "Ajuste direto"
+    RESTRICTED: "Concurso limitado por prévia qualificação"
+    NEGOTIATED: "Procedimento de negociação"
+    COMPETITIVE_DIALOG: "Diálogo concorrencial"
+    MINITENDER: "Ao abrigo do acordo-quadro (art.º 258.º)", "Ao abrigo do acordo-quadro (art.º 259.º)"
+    NEGOTIATED_WITHOUT_PUBLICATION: "Concurso público urgente"
+    DESIGN_CONTEST: "Concurso de concepção"
+    APPROACHING_BIDDERS: "Anúncio simplificado"
+    CONCESSION: "Instituição de sistema de qualificação", "Intenção de celebração de empreitadas de obras publicas por concessionários que não sejam entidades adjudicantes"

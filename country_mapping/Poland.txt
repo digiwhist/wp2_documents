@@ -1,0 +1,24 @@
+Supply type mapping:
+        SERVICES: "U"
+        WORKS: "B"
+        SUPPLIES: "D"
+
+Procedure type mapping:
+        OPEN: "PN", "LE"
+        RESTRICTED: "PO"
+        COMPETITIVE_DIALOG: "DK"
+        NEGOTIATED_WITH_PUBLICATION: "NO"
+        NEGOTIATED_WITHOUT_PUBLICATION: "NB", "WR"
+        APPROACHING_BIDDERS: "ZC"
+        OTHER: "KU"
+
+Body type mapping:
+        PUBLIC_BODY: "Podmiot prawa publicznego", "Uczelnia publiczna"
+        NATIONAL_AUTHORITY: "Administracja rządowa centralna"
+        REGIONAL_AUTHORITY: "Administracja samorządowa", "Samodzielny publiczny zakład opieki zdrowotnej", "Administracja rządowa terenowa"
+        OTHER: "Samodzielny publiczny zakład opieki zdrowotnej", "Instytucja ubezpieczenia społecznego i zdrowotnego", "Organ kontroli państwowej lub ochrony prawa, sąd lub trybunał"
+
+Form type mapping:
+        CONTRACT_NOTICE: "ZP-403", "ZP-405", "ZP-408"
+        CONTRACT_AWARD: "ZP-400", "ZP-401", "ZP-402", "ZP-404"
+        CONTRACT_UPDATE: "ZP-406", "ZP-SPR"
