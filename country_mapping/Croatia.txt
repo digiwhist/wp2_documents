@@ -2,7 +2,45 @@ Supply type mapping:
         SUPPLIES: "Roba"
         SERVICES: "Usluge"
         WORKS: "Radovi"
+        
+Buyer activity mapping:
+        AIRPORT: "Djelatnosti povezane sa zračnim lukama"
+        ECONOMIC_AND_FINANCIAL_AFFAIRS: "Gospodarstvo i financije"
+        EDUCATION: "Obrazovanje"
+        ENVIRONMENT: "Okoliš"
+        ELECTRICITY: "Električna energija"
+        DEFENCE: "Obrana"
+        GAS_AND_HEAT_PRODUCTION: "Proizvodnja, prijenos i distribucija plina i  toplinske energije"
+        GAS_AND_OIL_EXTRACTION: "Istraživanje i vađenje plina i nafte"
+        GENERAL_PUBLIC_SERVICES: "Opće javne usluge"
+        HEALTH: "Zdravstvo"
+        HOUSING_AND_COMMUNITY_AMENITIES: "Stambeno i komunalno gospodarstvo i usluge"
+        PORT: "Djelatnosti povezane s lukama"
+        POSTAL: "Poštanske usluge"
+        PUBLIC_ORDER_AND_SAFETY: "Javni red i sigurnost", "Javni  red i sigurnost"
+        RAILWAY: "Željezničke usluge"
+        RECREATION_CULTURE_AND_RELIGION: "Rekreacija, kultura i religija"
+        SOCIAL_PROTECTION: "Socijalna skrb"
+        URBAN_TRANSPORT: "Usluge gradske željeznice, tramvaja, trolejbusa ili autobusa"
+        WATER: "Vodoopskrba", "Ostalo: Vodno gospodarstvo"
+        OTHER: "Ostalo:"
 
 Form type mapping:
-        CONTRACT_NOTICE: "Poziv na nadmetanje", "POZIV NA NADMETANJE", "Poziv na nadmetanje – sektor", "POZIV NA NADMETANJE - SEKTOR"
-        CONTRACT_AWARD: "Obavijest o sklopljenim ugovorima", "OBAVIJEST O SKLOPLJENIM UGOVORIMA", "Obavijest o sklopljenim ugovorima - sektor", "OBAVIJEST O SKLOPLJENIM UGOVORIMA - SEKTORSKI"
+        CONTRACT_NOTICE: "Poziv na nadmetanje", "Poziv na nadmetanje – sektor", "POZIV NA NADMETANJE - SEKTOR", "Poziv na nadmetanje za  govore u području obrane i sigurnosti","Obavijest o nadmetanju", "Obavijest o nadmetanju – sektorska nabava", "POZIV NA NATJEČAJ"
+        CONTRACT_AWARD: "Obavijest o sklopljenim ugovorima", "Obavijest o sklopljenim ugovorima - sektor", "OBAVIJEST O SKLOPLJENIM UGOVORIMA - SEKTORSKI", "Obavijest o sklopljenim ugovorima u području obrane i sigurnosti", "Obavijest o dodjeli ugovora", "Obavijest o dodjeli ugovora – sektorska nabava", "OBAVIJEST O REZULTATIMA NATJEČAJA", "Prethodna obavijest o namjeri sklapanja ugovora"
+        CONTRACT_CANCELLATION: "OBJAVA O PONIŠTENJU NADMETANJA/ ISPRAVKU OBJAVE"
+        CONTRACT_UPDATE: "Ispravak Obavijest o izmjenama ili dodatnim informacijama"
+        
+Procedure type:
+        COMPETITIVE_DIALOG: "Natjecateljski dijalog"
+        NEGOTIATED_WITH_PUBLICATION: "Pregovarački s prethodnom objavom", "Pregovarački s prethodnom objavom zbog žurnosti"
+        NEGOTIATED_WITHOUT_PUBLICATION: "Pregovarački bez prethodne objave", "Sklapanje ugovora bez prethodne objave poziva na nadmetanje (u slučajevima navedenim u Odjeljku 2 Priloga D1) Obrazloženje odluke za sklapanje ugovora bez objave poziva na nadmetanje: molimo popunite Prilog D1"
+        OPEN: "Otvoreni"
+        RESTRICTED: "Ograničeni", "Ograničeni zbog žurnosti"
+        
+Selection method:
+        LOWEST_PRICE: "Najniža cijena", "NajniĹľa cijena"
+        MEAT: "Ekonomski najpovoljnija ponudaÂ", "Ekonomski najpovoljnija ponuda u odnosu na", "Ekonomski najpovoljnija ponuda"
+
+Body type:
+        REGIONAL_AUTHORITY: "Pravne osobe koje su osnovane za određene svrhe radi zadovoljavanja potreba u općem interesu"
