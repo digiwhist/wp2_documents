@@ -9,6 +9,8 @@ Procedure type mapping:
         CONCESSION: "Ehitustööde kontsessioon", "Kontsessioon"
         OTHER: "Lihtsustatud korras teenuste tellimine", "Erand § 14", "Vabatahtlik teade"
         OUTRIGHT_AWARD: "Vabatahtlik teade - leping ilma hanketeate eelneva avaldamis"
+        PUBLIC_CONTEST: "Konkurentsipõhine läbirääkimistega hankemenetlus"
+        INOVATION_PARTNERSHIP: "Innovatsioonipartnerlus"
 
 Selection method and lot mapping:
         LOWEST_PRICE: "Madalaim hind"
@@ -16,9 +18,9 @@ Selection method and lot mapping:
 
 Form type mapping:
         PRIOR_INFORMATION_NOTICE: "Eelteade", "Eelteade - kaitse- ja julgeolekuvaldkond"
-        CONTRACT_NOTICE: "Hanketeade", "Hanketeade (Võrgustik)", "Hanketeade - kaitse- ja julgeolekuvaldkond"
+        CONTRACT_NOTICE: "Hanketeade", "Hanketeade (Võrgustik)", "Hanketeade - kaitse- ja julgeolekuvaldkond", "Ideekonkursi kutse"
         CONTRACT_AWARD: "Riigihanke aruanne", "Ehitustööde kontsessiooni teade", "Ideekonkursi tulemused"
-        CONTRACT_IMPLEMENTATION: "Riigihanke aruande lisa"
+        CONTRACT_AMENDMENT: "Riigihanke aruande lisa"
 
 Buyer type mapping:
         REGIONAL_AUTHORITY: "Kohaliku omavalitsuse üksus"
