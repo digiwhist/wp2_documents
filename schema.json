@@ -1,0 +1,1455 @@
+{
+  "#schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "date": {
+      "type": "string",
+      "title": "TenderDate",
+      "pattern": "^\\d{4}-[01]\\d-[0-3]\\d$",
+      "description": "Date YYYY.MM.DD"
+    },
+    "date-time": {
+      "type": "string",
+      "title": "TenderDateTime",
+      "pattern": "^\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d",
+      "description": "Date with time YYYY.MM.DDThh:mm:ss"
+    },
+    "supply-type": {
+      "type": "string",
+      "title": "Supply Type",
+      "enum": [
+        "SUPPLIES",
+        "WORKS",
+        "SERVICES",
+        "OTHER"
+      ]
+    },
+    "procedure-type": {
+      "type": "string",
+      "title": "Procedure Type",
+      "enum": [
+        "OPEN",
+        "RESTRICTED",
+        "NEGOTIATED",
+        "COMPETITIVE_DIALOG",
+        "NEGOTIATED_WITH_PUBLICATION",
+        "NEGOTIATED_WITHOUT_PUBLICATION",
+        "DESIGN_CONTEST",
+        "MINITENDER",
+        "DPS_PURCHASE",
+        "OUTRIGHT_AWARD",
+        "APPROACHING_BIDDERS",
+        "PUBLIC_CONTEST",
+        "SIMPLIFIED_BELOW_THE_THRESHOLD",
+        "INOVATION_PARTNERSHIP",
+        "CONCESSION",
+        "OTHER"
+      ]
+    },
+    "size-type": {
+      "type": "string",
+      "title": "Size Type",
+      "enum": [
+        "BELOW_THE_THRESHOLD",
+        "ABOVE_THE_THRESHOLD",
+        "SMALL_SCALE"
+      ]
+    },
+    "selection-method": {
+      "type": "string",
+      "title": "Selection Method",
+      "description": "method used for bids evaluation - one of the LOWEST_PRICE or MEAT (most economically advantageous tender), individual MEAT criteria are in awardCriteria",
+      "enum": [
+        "MEAT",
+        "LOWEST_PRICE"
+      ]
+    },
+    "buyer-type": {
+      "type": "string",
+      "title": "Buyer Type",
+      "enum": [
+        "NATIONAL_AUTHORITY",
+        "NATIONAL_AGENCY",
+        "REGIONAL_AUTHORITY",
+        "REGIONAL_AGENCY",
+        "PUBLIC_BODY",
+        "EUROPEAN_AGENCY",
+        "UTILITIES",
+        "OTHER"
+      ]
+    },
+    "form-type": {
+      "type": "string",
+      "title": "Form Type",
+      "enum": [
+        "CONTRACT_NOTICE",
+        "CONTRACT_AWARD",
+        "CONTRACT_CANCELLATION",
+        "CONTRACT_IMPLEMENTATION",
+        "NOTICE_ON_BUYER_PROFILE",
+        "PRIOR_INFORMATION_NOTICE",
+        "CONTRACT_UPDATE",
+        "CONTRACT_AMENDMENT",
+        "OTHER",
+	"COMPILED"
+      ],
+      "distinct": true,
+      "description": "undocumented form-type enumeration"
+    },
+    "indicator-type": {
+      "type": "string",
+      "title": "Indicator Type",
+      "enum": [
+        "INTEGRITY_SINGLE_BID",
+        "INTEGRITY_CALL_FOR_TENDER_PUBLICATION",
+        "INTEGRITY_ADVERTISEMENT_PERIOD",
+        "INTEGRITY_PROCEDURE_TYPE",
+        "INTEGRITY_DECISION_PERIOD",
+        "INTEGRITY_TAX_HAVEN",
+        "INTEGRITY_NEW_COMPANY",
+        "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT",
+        "ADMINISTRATIVE_ELECTRONIC_AUCTION",
+        "ADMINISTRATIVE_COVERED_BY_GPA",
+        "ADMINISTRATIVE_FRAMEWORK_AGREEMENT",
+        "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE",
+        "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES",
+        "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS",
+        "TRANSPARENCY_AWARD_DATE_MISSING",
+"TRANSPARENCY_BUYER_NAME_MISSING",
+"TRANSPARENCY_PROC_METHOD_MISSING",
+"TRANSPARENCY_BUYER_LOC_MISSING",
+"TRANSPARENCY_BIDDER_ID_MISSING",
+"TRANSPARENCY_BIDDER_NAME_MISSING",
+"TRANSPARENCY_MARKET_MISSING",
+"TRANSPARENCY_TITLE_MISSING",
+"TRANSPARENCY_VALUE_MISSING",
+"TRANSPARENCY_YEAR_MISSING",
+"INTEGRITY_WINNER_CA_SHARE" 
+      ]
+    },
+    "score-type": {
+      "type": "string",
+      "title": "Score Type",
+      "description": "Type of indicator score",
+      "enum": [
+        "INTEGRITY",
+        "ADMINISTRATIVE",
+        "TRANSPARENCY",
+        "TENDER"
+      ]
+    },
+    "indicator-value": {
+      "type": "number",
+      "title": "Indicator Score",
+      "min": 0,
+      "max": 100
+    },
+    "indicator-status-type": {
+      "type": "string",
+      "title": "Indicator Status Type",
+      "enum": [
+        "CALCULATED",
+        "INSUFFICIENT_DATA",
+        "UNDEFINED"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "description": "undocumented language enumeration",
+      "distinct": true
+    },
+    "cpv": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "CPV",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "CPV code of the subject"
+        },
+        "isMain": {
+          "type": "boolean",
+          "description": "Is main cpv code of the subject"
+        },
+        "name": {
+          "type": "string",
+          "description": "Localized name of cpv"
+        }
+      }
+    },
+    "award-criteria": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Award Criterion",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of criterion, PRICE if lowest price is used"
+        },
+        "weight": {
+          "type": "number",
+          "description": "Weight of criterion (scale 0-100)"
+        },
+        "description": {
+          "type": "string",
+          "description": "Broader description of the criterion"
+        },
+        "isPriceRelated": {
+          "type": "boolean",
+          "description": "Is the criterion directly related to price (monetary measurable)? such as price, lifetime costs, interest etc."
+        }
+      }
+    },
+    "funding": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Funding",
+      "properties": {
+        "programme": {
+          "type": "string",
+          "description": "Refined classification of sources (such as type of Operational programme etc..)"
+        },
+        "source": {
+          "type": "string",
+          "description": "source"
+        },
+        "isEuFund": {
+          "type": "boolean",
+          "description": "Is the source from EU funds?"
+        }
+      }
+    },
+    "unit-price": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Unit Price",
+      "properties": {
+        "unitNumber": {
+          "type": "number",
+          "description": "Number of units"
+        },
+        "currency": {
+          "type": "string",
+          "description": "currency"
+        }
+      }
+    },
+    "price": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Price",
+      "properties": {
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 of used currency",
+          "distinct": true
+        },
+        "publicationDate": {
+          "$ref": "#/definitions/date",
+          "description": ""
+        },
+        "currencyNational": {
+          "type": "string",
+          "description": "ISO 4217 of used currency",
+          "distinct": true
+        },
+        "vat": {
+          "type": "number",
+          "description": "VAT percentage (0 if no VAT is paid)"
+        },
+        "netAmount": {
+          "type": "number",
+          "description": "Price without VAT"
+        },
+        "netAmountNational": {
+          "type": "number",
+          "description": "Price in national currency without VAT"
+        },
+        "netAmountEur": {
+          "type": "number",
+          "description": "Price in EUR without VAT"
+        },
+        "amountWithVat": {
+          "type": "number",
+          "description": "Price including VAT"
+        },
+        "minNetAmount": {
+          "type": "number",
+          "description": "Minimum reachable value of netAmount - typically given by range estimate or spread of bids"
+        },
+        "maxNetAmount": {
+          "type": "number",
+          "description": "Maximum reachable value of netAmount - typically given by range estimate or spread of bids"
+        },
+        "minAmountWithVat": {
+          "type": "number",
+          "description": "Minimum reachable value of amountWithVAT"
+        },
+        "maxAmountWithVat": {
+          "type": "number",
+          "description": "Maximum reachable value of amountWithVAT"
+        }
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Correction",
+      "properties": {
+        "sectionNumber": {
+          "type": "string",
+          "description": "sectionNumber"
+        },
+        "lotNumber": {
+          "type": "integer",
+          "description": "lotNumber"
+        },
+        "placeOfModifiedText": {
+          "type": "string",
+          "description": "placeOfModifiedText"
+        },
+        "original": {
+          "type": "string",
+          "description": "original"
+        },
+        "replacement": {
+          "type": "string",
+          "description": "replacement"
+        },
+        "originalDate": {
+          "type": "string",
+          "description": "originalDate"
+        },
+        "replacementDate": {
+          "type": "string",
+          "description": "replacementDate"
+        },
+        "originalCpvs": {
+          "description": "originalCpvs",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cpv",
+            "description": "cpv code of the subject"
+          }
+        },
+        "replacementCpvs": {
+          "description": "replacementCpvs",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cpv",
+            "description": "cpv code of the subject"
+          }
+        },
+        "originalValue": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "originalValue",
+          "properties": {
+            "currency": {
+              "type": "string",
+              "description": "Document url"
+            },
+            "netAmount": {
+              "type": "number",
+              "description": "netAmount"
+            }
+          }
+        },
+        "replacementValue": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "replacementValue",
+          "properties": {
+            "currency": {
+              "type": "string",
+              "description": "Document url"
+            },
+            "netAmount": {
+              "type": "number",
+              "description": "netAmount"
+            }
+          }
+        }
+      }
+    },
+    "address": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Address",
+      "properties": {
+        "rawAddress": {
+          "type": "string",
+          "description": "Raw string for unstructured address"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street including numbers"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country Code: ISO 3166-1 alpha-2 = two letter"
+        },
+        "url": {
+          "type": "string",
+          "description": "URL"
+        },
+        "nuts": {
+          "type": "array",
+          "description": "Array of Nuts",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Original Nuts code of region"
+          }
+        },
+        "ot": {
+          "type": "object",
+          "additionalProperties": true,
+          "title": "Opentender Additional Information",
+          "properties": {
+            "nutscode": {
+              "type": "string",
+              "description": "Cleaned Nuts code"
+            }
+          }
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Publication",
+      "properties": {
+        "sourceId": {
+          "type": "string",
+          "description": "Identifier of publication on source"
+        },
+        "source": {
+          "type": "string",
+          "description": "source of publication"
+        },
+        "humanReadableUrl": {
+          "type": "string",
+          "description": "Url of tender on source, where human readable data are present, null if not available"
+        },
+        "machineReadableUrl": {
+          "type": "string",
+          "description": "Url of tender on source, where machine readable data are present, null if not available"
+        },
+        "buyerAssignedId": {
+          "type": "string",
+          "description": "Buyers custom identifier of publication"
+        },
+        "sourceTenderId": {
+          "type": "string",
+          "description": "Identifier of tender on source"
+        },
+        "publicationDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of publication (of given version)"
+        },
+        "dispatchDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of dispatch (different from publication date)"
+        },
+        "lastUpdate": {
+          "$ref": "#/definitions/date"
+        },
+        "language": {
+          "$ref": "#/definitions/language",
+          "description": "Language code of the publication"
+        },
+        "formType": {
+          "$ref": "#/definitions/form-type",
+          "description": "Identifies given type of publication http://ocds.open-contracting.org/standard/r/1__0__RC/en/schema/codelists/#release-tag"
+        },
+        "sourceFormType": {
+          "type": "string",
+          "description": "Source specific type of form"
+        },
+        "isIncluded": {
+          "type": "boolean",
+          "description": "Are the refered publication data already merged into this publication package?"
+        },
+        "isValid": {
+          "type": "boolean",
+          "description": "isValid"
+        },
+        "isParentTender": {
+          "type": "boolean",
+          "description": "isParentTender"
+        },
+        "version": {
+          "type": "number"
+        }
+      }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "TenderDocument",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "description": "Document url"
+        },
+        "publicationDateTime": {
+          "$ref": "#/definitions/date-time"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "CONTRACTOR_AGREEMENT"
+          ]
+        },
+        "version": {
+          "type": "number"
+        }
+      }
+    },
+    "body-metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Meta Data",
+      "properties": {
+        "foundationDate": {
+          "type": "string",
+          "description": ""
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Body",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of body"
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The name of the contact person"
+        },
+        "contactPoint": {
+          "type": "string",
+          "description": "Description of contact point - usually"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the contact"
+        },
+        "email": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/address",
+          "description": "Address of the body seat"
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
+          "description": ""
+        }
+      }
+    },
+    "buyer": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Buyer",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "isSme": {
+          "type": "boolean",
+          "description": ""
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of body"
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The name of the contact person"
+        },
+        "contactPoint": {
+          "type": "string",
+          "description": "Description of contact point - usually"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the contact"
+        },
+        "email": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/address",
+          "description": "Address of the body seat"
+        },
+        "mainActivities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Buyer Activity Type - education, health, social security, ..."
+          },
+          "description": "Array of Buyer Activity Type"
+        },
+        "buyerType": {
+          "$ref": "#/definitions/buyer-type",
+          "description": "Central, utility, regional/local, supported body (SOE's which are not utilities, research institutions,health care insurance companies, hospitals) institution under public law (prispevkove organizace), other"
+        },
+        "isLeader": {
+          "type": "boolean",
+          "description": "Identifies the leader of consortium (typically buyer or bidder)"
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
+          "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
+        }
+      }
+    },
+    "bidder": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Bidder",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of body"
+        },
+        "contactName": {
+          "type": "string",
+          "description": "The name of the contact person"
+        },
+        "contactPoint": {
+          "type": "string",
+          "description": "Description of contact point - usually"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the contact"
+        },
+        "email": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/address",
+          "description": "Address of the body seat"
+        },
+        "isSme": {
+          "type": "boolean",
+          "description": ""
+        },
+        "isLeader": {
+          "type": "boolean",
+          "description": "isSme"
+        },
+        "buyerType": {
+          "$ref": "#/definitions/buyer-type",
+          "description": "Central, utility, regional/local, supported body (SOE's which are not utilities, research institutions,health care insurance companies, hospitals) institution under public law (prispevkove organizace), other"
+        },
+        "mainActivities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Buyer Activity Type - education, health, social security, ..."
+          },
+          "description": "Array of Buyer Activity Type"
+        },
+        "metaData": {
+          "$ref": "#/definitions/body-metadata",
+          "description": ""
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
+        }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Payment",
+      "properties": {
+        "paymentDate": {
+          "$ref": "#/definitions/date"
+        },
+        "price": {
+          "$ref": "#/definitions/price"
+        }
+      }
+    },
+    "bid": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Bid",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "isWinning": {
+          "type": "boolean"
+        },
+        "isSubcontracted": {
+          "type": "boolean",
+          "description": "Is there a subcontractor?"
+        },
+        "isConsortium": {
+          "type": "boolean"
+        },
+        "subcontractedProportion": {
+          "type": "integer",
+          "description": "subcontractedProportion"
+        },
+        "monthlyPriceMonthsCount": {
+          "type": "integer",
+          "description": "monthlyPriceMonthsCount"
+        },
+        "annualPriceYearsCount": {
+          "type": "integer",
+          "description": "annualPriceYearsCount"
+        },
+        "bidders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bidder"
+          },
+          "description": "Array of Bidders"
+        },
+        "unitPrices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/unit-price"
+          },
+          "description": "Array of Unit Price"
+        },
+        "payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/payment"
+          }
+        },
+        "subcontractors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bidder"
+          }
+        },
+        "subcontractedValue": {
+          "$ref": "#/definitions/price",
+          "description": "Value of the tender likely to be subcontracted to third parties"
+        },
+        "price": {
+          "$ref": "#/definitions/price",
+          "description": "Price"
+        }
+      }
+    },
+    "lot": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Lot",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": ""
+        },
+        "title": {
+          "type": "string",
+          "description": "Tender lot title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Tender lot description"
+        },
+        "lotNumber": {
+          "type": "integer",
+          "description": "Lot number"
+        },
+        "validBidsCount": {
+          "type": "integer"
+        },
+        "awardDecisionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of decision on tender award"
+        },
+        "estimatedCompletionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Estimated date of tender end. might be calculated based on stated tender duration"
+        },
+        "estimatedStartDate": {
+          "$ref": "#/definitions/date",
+          "description": "Estimated date of tender start"
+        },
+        "contractSignatureDate": {
+          "$ref": "#/definitions/date",
+          "description": "contractSignatureDate"
+        },
+        "cancellationDate": {
+          "$ref": "#/definitions/date",
+          "description": "cancellationDate"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
+        },
+        "selectionMethod": {
+          "$ref": "#/definitions/selection-method"
+        },
+        "estimatedPrice": {
+          "$ref": "#/definitions/price",
+          "description": "Estimated value of tender lot"
+        },
+        "addressOfImplementation": {
+          "$ref": "#/definitions/address",
+          "description": "The exact address of the tender performance"
+        },
+        "estimatedDurationInMonths": {
+          "type": "integer",
+          "description": "Estimated tender duration in months"
+        },
+        "estimatedDurationInDays": {
+          "type": "integer",
+          "description": "Estimated tender duration in days"
+        },
+        "estimatedDurationInYears": {
+          "type": "integer",
+          "description": "Estimated tender duration in years"
+        },
+        "maxFrameworkAgreementParticipants": {
+          "type": "integer",
+          "description": "Envisaged maximum number of participatns to the framework agreement"
+        },
+        "foreignCompaniesBidsCount": {
+          "type": "integer",
+          "description": "foreignCompaniesBidsCount"
+        },
+        "otherEuMemberStatesCompaniesBidsCount": {
+          "type": "integer",
+          "description": "otherEuMemberStatesCompaniesBidsCount"
+        },
+        "nonEuMemberStatesCompaniesBidsCount": {
+          "type": "integer",
+          "description": "nonEuMemberStatesCompaniesBidsCount"
+        },
+        "smeBidsCount": {
+          "type": "integer",
+          "description": "smeBidsCount"
+        },
+        "cpvs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cpv",
+            "description": "cpv code of the subject"
+          },
+          "description": "Array of CPV"
+        },
+        "bids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/bid"
+          },
+          "description": "Array of Bid"
+        },
+        "contractNumber": {
+          "type": [
+            "string",
+            "integer"
+          ],
+          "description": "Contract number"
+        },
+        "bidsCount": {
+          "type": "integer",
+          "description": "Number of bids received including electronic bids"
+        },
+        "positionOnPage": {
+          "type": "integer",
+          "description": "Order on page"
+        },
+        "fundings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/funding",
+            "description": "funding sources used (if none listed, implicitly assuming own budget of the body..)"
+          },
+          "description": "Array of Funding"
+        },
+        "awardCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/award-criteria"
+          },
+          "description": "MEAT criteria"
+        },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
+        "electronicBidsCount": {
+          "type": "integer",
+          "description": "Number of bids received via electronic means"
+        },
+        "isAwarded": {
+          "type": "boolean",
+          "description": "Is lot awarded"
+        },
+        "isAwardedToGroupOfSuppliers": {
+          "type": "boolean",
+          "description": "isAwardedToGroupOfSuppliers"
+        },
+        "cancellationReason": {
+          "type": "string",
+          "description": "cancellationReason"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ANNOUNCED",
+            "AWARDED",
+            "CANCELLED",
+            "PREPARED",
+            "FINISHED"
+          ]
+        }
+      }
+    },
+    "indicator": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Indicator",
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/indicator-value",
+          "description": "Score of indicator"
+        },
+        "type": {
+          "description": "Type of indicator",
+          "$ref": "#/definitions/indicator-type"
+        },
+        "status": {
+          "$ref": "#/definitions/indicator-status-type"
+        }
+      }
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Indicator Scores",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/score-type"
+        },
+        "status": {
+          "$ref": "#/definitions/indicator-status-type"
+        },
+        "value": {
+          "$ref": "#/definitions/indicator-value",
+          "description": "Calculated indicator score"
+        }
+      }
+    },
+    "tender": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "Tender",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Tender ID"
+        },
+        "country": {
+          "type": "string",
+          "description": "Country of tender"
+        },
+        "created": {
+          "type": "string",
+          "description": "DB entry create date-time with ms"
+        },
+        "modified": {
+          "type": "string",
+          "description": "DB entry modified date-time with ms"
+        },
+        "nationalProcedureType": {
+          "type": "string",
+          "description": "Type of procedure - unstructured"
+        },
+        "buyerAssignedId": {
+          "type": "string",
+          "description": "Reference number given to tender by buyer"
+        },
+        "title": {
+          "type": "string",
+          "description": "Tender title"
+        },
+        "titleEnglish": {
+          "type": "string",
+          "description": "Tender title English"
+        },
+        "description": {
+          "type": "string",
+          "description": "Subject description"
+        },
+        "appealBodyName": {
+          "type": "string",
+          "description": "Name of body to which appeals should be filed"
+        },
+        "mediationBodyName": {
+          "type": "string",
+          "description": "Name of body to which appeals should be filed"
+        },
+        "excessiveFrameworkAgreementJustification": {
+          "type": "string",
+          "description": "excessiveFrameworkAgreementJustification"
+        },
+        "acceleratedProcedureJustification": {
+          "type": "string",
+          "description": "acceleratedProcedureJustification"
+        },
+        "deposits": {
+          "type": "string",
+          "description": "Description of deposits required (ideally number and currency, decomposed to price)"
+        },
+        "personalRequirements": {
+          "type": "string",
+          "description": "Description of personal requirements on bidder"
+        },
+        "economicRequirements": {
+          "type": "string",
+          "description": "Description of economic requirements on bidder"
+        },
+        "technicalRequirements": {
+          "type": "string",
+          "description": "Description of technical requirements on bidder"
+        },
+        "cancellationReason": {
+          "type": "string",
+          "description": "cancellationReason"
+        },
+        "modificationReason": {
+          "type": "string",
+          "description": "modificationReason"
+        },
+        "modificationReasonDescription": {
+          "type": "string",
+          "description": "modificationReasonDescription"
+        },
+        "procedureType": {
+          "$ref": "#/definitions/procedure-type"
+        },
+        "size": {
+          "$ref": "#/definitions/size-type"
+        },
+        "supplyType": {
+          "$ref": "#/definitions/supply-type"
+        },
+        "selectionMethod": {
+          "$ref": "#/definitions/selection-method"
+        },
+        "isEInvoiceAccepted": {
+          "type": "boolean",
+          "description": "Electronic invoicing will be accepted"
+        },
+        "isCentralProcurement": {
+          "type": "boolean",
+          "description": "Is tender awarded by central purchasing authority?"
+        },
+        "isCoveredByGpa": {
+          "type": "boolean",
+          "description": "Is covered by GPA?"
+        },
+        "documentsPayable": {
+          "type": "boolean",
+          "description": "Is there a price asked for tender documents provision?"
+        },
+        "isJointProcurement": {
+          "type": "boolean",
+          "description": "The tender involves joint procurement"
+        },
+        "isFrameworkAgreement": {
+          "type": "boolean",
+          "description": "Is awarded as superior framework agreement?"
+        },
+        "isAcceleratedProcedure": {
+          "type": "boolean",
+          "description": "Is accelerated procedure"
+        },
+        "isWholeTenderCancelled": {
+          "type": "boolean",
+          "description": "Is whole tender cancelled"
+        },
+        "isDps": {
+          "type": "boolean",
+          "description": "Is either initiation of dynamic purchasing system, or a purchase via one"
+        },
+        "isElectronicAuction": {
+          "type": "boolean",
+          "description": "Is awarded by eauction?"
+        },
+        "hasLots": {
+          "type": "boolean",
+          "description": "Is the tender divided into lots?"
+        },
+        "areVariantsAccepted": {
+          "type": "boolean",
+          "description": "Are variant offers accepted?"
+        },
+        "isDocumentsAccessRestricted": {
+          "type": "boolean"
+        },
+        "hasOptions": {
+          "type": "boolean",
+          "description": "Tender has options?"
+        },
+        "isOnBehalfOf": {
+          "type": "boolean",
+          "description": "Boolean whether the purchase is being made for someone else. e.g. city purchases on behalf of one of its schools..."
+        },
+        "estimatedStartDate": {
+          "$ref": "#/definitions/date",
+          "description": "Estimated date of tender start"
+        },
+        "cancellationDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of tender cancellation (or its publication)"
+        },
+        "estimatedCompletionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Estimated date of tender end. Might be calculated based on stated tender duration"
+        },
+        "awardDeadline": {
+          "$ref": "#/definitions/date",
+          "description": "Until when is tender to be awarded by latest? (how long are bidders bound by their bids)"
+        },
+        "bidDeadline": {
+          "$ref": "#/definitions/date-time",
+          "description": "Date until which bids need to be submitted (do not confuse with application deadline for Restricted procedure type)"
+        },
+        "documentsDeadline": {
+          "$ref": "#/definitions/date-time",
+          "description": "Date until tender documents or additional information are provided"
+        },
+        "awardDecisionDate": {
+          "$ref": "#/definitions/date",
+          "description": "Date of decision on tender award"
+        },
+        "contractSignatureDate": {
+          "$ref": "#/definitions/date"
+        },
+        "completionDate": {
+          "$ref": "#/definitions/date"
+        },
+        "estimatedDurationInMonths": {
+          "type": "integer",
+          "description": "Estimated tender duration in months"
+        },
+        "estimatedDurationInDays": {
+          "type": "integer",
+          "description": "Estimated tender duration in days"
+        },
+        "estimatedDurationInYears": {
+          "type": "integer",
+          "description": "Estimated tender duration in years"
+        },
+        "awardDeadlineDuration": {
+          "type": "integer",
+          "description": "awardDeadlineDuration"
+        },
+        "maxFrameworkAgreementParticipants": {
+          "type": "integer",
+          "description": "Envisaged maximum number of participants to the framework agreement"
+        },
+        "maxBidsCount": {
+          "type": "integer",
+          "description": "Maximum number of bids, typically used in Restricted or Negotiated with publication procedure"
+        },
+        "envisagedMinCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedMaxCandidatesCount": {
+          "type": "integer"
+        },
+        "envisagedCandidatesCount": {
+          "type": "integer"
+        },
+        "documentsPrice": {
+          "$ref": "#/definitions/price",
+          "description": "Price of tender documents"
+        },
+        "estimatedPrice": {
+          "$ref": "#/definitions/price",
+          "description": "Estimated value of tender lot"
+        },
+        "finalPrice": {
+          "$ref": "#/definitions/price"
+        },
+        "furtherInformationProvider": {
+          "$ref": "#/definitions/buyer",
+          "description": "Body from whom further information can be obtained"
+        },
+        "specificationsProvider": {
+          "$ref": "#/definitions/buyer",
+          "description": "Body from whom specifications and additional documents can be obtained"
+        },
+        "bidsRecipient": {
+          "$ref": "#/definitions/buyer",
+          "description": "Body to whom tenders/requests to participate must be sent"
+        },
+        "addressOfImplementation": {
+          "$ref": "#/definitions/address",
+          "description": "The exact address of the tender performance"
+        },
+        "fundings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/funding",
+            "description": "funding sources used (if none listed, implicitly assuming own budget of the body..)"
+          },
+          "description": "Array of Funding"
+        },
+        "indicators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/indicator"
+          },
+          "description": "Array of Indicators"
+        },
+        "onBehalfOf": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/buyer"
+          },
+          "description": "If the purchase is being made for someone else. e.g. city purchases on behalf of one of its schools..."
+        },
+        "buyers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/buyer",
+            "description": "Identification of buyer: contracting authority or other purchasing body"
+          },
+          "description": "Array of Buyer"
+        },
+        "administrators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/buyer",
+            "description": "Data on external tender administrator, to whom procedure administration was outsourced (in case it was)"
+          },
+          "description": "Array of Body"
+        },
+        "lots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/lot",
+            "description": "Contains info on individual lot"
+          },
+          "description": "Array of Lot"
+        },
+        "cpvs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/cpv"
+          },
+          "description": "Array of CPV codes of the subject"
+        },
+        "awardCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/award-criteria"
+          },
+          "description": "MEAT criteria"
+        },
+        "eligibilityCriteria": {
+          "type": "string"
+        },
+        "eligibleBidLanguages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of Languages in which tenders or requests to participate may be submitted"
+        },
+        "npwpReasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Reasons for use of negotiated procedure without publication, such as: no bids, research, technical, artistic, legal, urgency,additional work, work repetition,design contest,commodity market"
+        },
+        "publications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/publication"
+          },
+          "description": "Array of relevant publications, including url info for original CFT, CA..."
+        },
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/document",
+            "description": "Metadata on document (.docx, .pdf...)"
+          },
+          "description": "Array of documents relevant to tender (tender documentation, protocol on bids evaluation etc)"
+        },
+        "corrections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/correction",
+            "description": "correction"
+          },
+          "description": "corrections"
+        },
+        "documentsLocation": {
+          "$ref": "#/definitions/address"
+        },
+        "ot": {
+          "type": "object",
+          "additionalProperties": true,
+          "title": "Opentender Additional Information",
+          "properties": {
+            "indicator": {
+              "type": "object",
+              "additionalProperties": true,
+              "title": "Indicators as Fields",
+              "properties": {
+                "INTEGRITY_SINGLE_BID": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_CALL_FOR_TENDER_PUBLICATION": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_ADVERTISEMENT_PERIOD": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_PROCEDURE_TYPE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_DECISION_PERIOD": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_TAX_HAVEN": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "INTEGRITY_NEW_COMPANY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_CENTRALIZED_PROCUREMENT": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_ELECTRONIC_AUCTION": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_COVERED_BY_GPA": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_FRAMEWORK_AGREEMENT": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_ENGLISH_AS_FOREIGN_LANGUAGE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE_NOTICE_AND_AWARD_DISCREPANCIES": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY_NUMBER_OF_KEY_MISSING_FIELDS": {
+                  "$ref": "#/definitions/indicator-value"
+                }
+              }
+            },
+            "score": {
+              "type": "object",
+              "additionalProperties": true,
+              "title": "Scores as Fields",
+              "properties": {
+                "INTEGRITY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "ADMINISTRATIVE": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TRANSPARENCY": {
+                  "$ref": "#/definitions/indicator-value"
+                },
+                "TENDER": {
+                  "$ref": "#/definitions/indicator-value"
+                }
+              }
+            },
+            "cpv": {
+              "type": "string",
+              "title": "Cleaned Main CPV"
+            },
+            "scores": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/score"
+              },
+              "description": "Array of Indicator Scores"
+            },
+            "date": {
+              "$ref": "#/definitions/date",
+              "description": "Unified Tender Date"
+            },
+            "country": {
+              "type": "string",
+              "description": "Country Code: ISO 3166-1 alpha-2 = two letter OR ('EU' == European Institutions)"
+            }
+          }
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "title": "Tender Set",
+  "description": "Array of Tenders",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/tender"
+  }
+}
